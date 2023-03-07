@@ -13,13 +13,15 @@ const displayData = data =>{
     // console.log(data.weather[0].main);
     temperature.innerText = data.main.temp;
 
-    // const skyCondition = document.getElementById('condition');
-    // skyCondition.innerText = data.weather[0].main;
+    const skyCondition = document.getElementById('condition');
+    skyCondition.innerText = data.weather[0].main;
 }
 
 document.getElementById('search-btn').addEventListener('click',function(){
     const searchTextField = document.getElementById('search-field');
    const  searchText = searchTextField.value;
+   document.getElementById('location').innerText = searchText;
+   document.getElementById('condition').innerText = searchText;
    loadTemperatureInfo(searchText);
    searchTextField.value='';//to clear search field;
 
